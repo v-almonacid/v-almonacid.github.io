@@ -20,4 +20,6 @@ layout: home
 
  - [¿Puede una criptomoneda reemplazar al peso chileno? [ES]](https://www.fayerwayer.com/2018/08/criptomoneda-peso-chileno/)
 
+ - [Criptomonedas: los bancos ponen en riesgo la innovación en Chile [ES]](https://medium.com/@v_almonacid/criptomonedas-los-bancos-ponen-en-riesgo-la-innovaci%C3%B3n-en-chile-e58ceaf02d82)
+
  - [Basta de formar ingenieros-gerentes [ES]](https://www.elmostrador.cl/noticias/opinion/2015/03/11/basta-de-formar-ingenieros-gerentes/)
