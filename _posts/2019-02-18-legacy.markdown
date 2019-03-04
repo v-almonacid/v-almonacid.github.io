@@ -1,0 +1,255 @@
+---
+layout: post
+title:  "Legacy: My Experience in a Blockchain Startup Project"
+date:   2019-02-18 12:48:02 +0100
+categories: blockchain
+---
+![Legacy](/assets/logo.png)
+## The Beginning
+
+In early 2017, while I was writing my PhD thesis, my friend Felipe asked me to
+join him and help him build Legacy, a dApp initially aiming at solving the
+problem of transferring cryptocurrency funds after passing. My main task would be to help designing the overall architecture, to dig into any technical issues related to the Ethereum platform and to write the whitepaper.
+This was about a year before the great crypto rally that pushed ETH over 1000€,
+and at the time the crypto community was rather small.
+As a consequence, we soon realized that if we wanted to build a business around
+this idea we needed to target a bigger market, and build something meaningful
+even for those who weren't involved in the crypto/blockchain space. And so the
+idea of reinventing the old fashioned will and testament system came up.
+We decided to create a solution better adapted to our digital society and that
+would allow to pass on digital assets of both monetary value
+(ie. cryptocurrencies and tokens) and personal value (ie. images, videos, documents).
+Thinking long term, we imagined that many of our possessions would exist inside
+public, distributed ledgers (think of tokenized smart-property, security tokens
+and so on). We still do. Kind of.
+
+In a matter of days, we formed a great team and started prototyping Legacy
+&alpha;. Pitching the project within the blockchain community was a challenging
+task, as the space was filling up with many projects and some proved not
+to be exactly legit. Still, I was surprised by the amount of positive feedback
+we received. The project attracted several investors and slowly but steadily a
+community of followers started to grow.
+
+## Application vs Protocol: The Token Model
+
+From the beginning, we all agreed on funding the project through a token
+crowdsale. But the token model was a bit controversial. We iterated over several
+ideas and asked many people for feedback. During those days, there was an
+ongoing debate on application vs protocol tokens (see [here][protocol-tokens]
+or [here][app-tokens], for instance), and most people seemed to agree with
+the narrative that protocol tokens captured most of a network's value.
+This lead us to a dilemma: Option A was to pivot and focus on building some kind
+of lower-level infrastructure that would allow for other services to build on top
+of. The more concrete idea in this line was to work on a decentralized
+solution for
+determining when a given user behind a blockchain identity has passed away (you
+may think of this as some sort of oracle service),
+which was something essential for our original product as well as for some
+use-cases in decentralized insurtech.
+Option B was to remain at the application layer and adopt a token model that
+would allow us to converge towards a decentralized autonomous organization (DAO).
+At this point, there is already something that is worth noting: The design of
+our product was influenced by the design of our token model, when it should be
+the other way around. Ideally, a token should add value to your product or
+business model but shouldn't define it. While we were fully aware of this, we
+also knew that a successful crowdsale required a flawless token model with good
+expectations in terms of velocity in the long-term.
+
+At the end, option B prevailed---mostly because it corresponded to our original
+idea and because there was no much sense in pivoting on the grounds of token
+design issues. Personally, I loved the idea of creating a DAO powered by a token
+that would give participants governance rights and some form of profit sharing.
+However, I was concerned about some problems in this approach. First, while the
+whole idea of creating a DAO was exciting, I had doubts about our chances to
+attract active members to our community. A well-known issue with on-chain
+governance, for instance, is that incentives for voting are usually insufficient
+on an individual scale. Our project was about digital wills and testaments, and
+at a glance it might not seem sexy enough (specially for young people) to think
+that
+it might work well as a DAO. Eventually, I realized that it all depended on how
+successful we could get at articulating an ecosystem that would attract relevant
+actors in the sector (ie. insurance companies, family offices, custody services,
+legal firms, estate planning attorneys, etc.). The second problem was related
+to legal uncertainties: We weren't sure if our token could be considered
+a security and some red flags were already starting to show up in the space.
+So having a profit-sharing token was no longer an option.
+Overall, we started to be more aware of the many unknowns that come when
+funding a company through an ICO.
+What was clear enough was that building Legacy would involve significant
+challenges in all fronts, from software development to legal compliance.
+Despite this, we were a good team and felt very confident in moving forward.
+
+## Architecture and Software Design Issues
+When designing Legacy we encountered three major technical issues with no
+obvious solutions:
+
+1. Long-term service availability
+2. Proving that a user has passed away
+3. On-chain privacy
+
+The first issue is about ensuring that the system will still be operating even
+decades after a user signs up. If you setup a Legacy contract when you are 30,
+you would expect that the system will operate for at least another 50 years.
+When you understand (and believe) in the power of DAOs, this issue seems
+manageable. DAOs might be the way to create *unstoppable organizations* (as
+people from Aragon like to say), and with the correct incentive design, we might
+expect them to operate for a very long time.
+A corollary of issue 1 relates to data storage. While a decentralized data
+storage system (based on something like
+IPFS) *can* be built, these technologies are still immature and are unlikely to
+remain stable even in the short term. Legacy's v1.0 would then need an
+hybrid storage system (ie. a mix between standard, centralized systems and
+decentralized, blockchain-based systems).
+Either way, long-term storage is difficult to dimension in terms of cost and
+engineering.
+
+The second issue has to do with the classic problem of communicating with the
+off-chain world (aka *the oracle problem*). In general, the more your dApp
+relies on oracles, the more centralized it gets. Legacy's original approach to
+get proof of life was based on a mix of off-chain and on-chain sources of data.
+On the one hand, a fully decentralized solution wouldn't need oracles.
+For Legacy, the only option consisted on using a timer---which we called the
+*proof of life timer*---that is reinitialized every time a user interacts with
+the blockchain. If the timer gets to zero, then we assumed that the user is
+no longer active and is probably dead. While this solution is only based on
+on-chain data, it is clear that it lacks reliability. On the other hand, if we  want to increase the accuracy of this method, we may use additional off-chain
+data like online activity in social networks and access it from the blockchain
+through an oracle interface.
+Going further, we might also exploit official death registries, which are available in some countries. The important thing to note is that there is a
+decentralization--reliability trade-off. Ultimately, we wanted to let the user
+decide on this trade-off by designing a parametric, layered system,
+as shown in the table below.
+
+| PoL Layer 0  | On-chain activity |
+| PoL Layer 1  | Notifications, Web/Mobile Plugins |
+| PoL Layer 2  | AI Engine |
+| PoL Layer 3  | Official Death Registries |
+| PoL Layer 4  | Human-Assisted Service    |
+
+Finally there is the problem of on-chain data storage. In Legacy, all user data
+must be stored encrypted (whichever the nature of the underlying storage
+system). The question is how and where to store the decryption keys. In an ideal
+world, a smart-contract would also be able to store private variables that could
+only be read by the contract owner. In this way, all sensible data could be
+safely stored off-chain and the user's decryption keys could only be manipulated
+by the user's contract. Users would be in complete control of their data.
+But such a solution does not exist yet. And, while theoretically plausible, it
+is way to complex to implement. When we started designing Legacy, there was no
+project addressing this particular problem on Ethereum. A few months after, I
+heard about [Keep][keep], a small team lead by Matt Luongo
+who proposed a privacy layer for Ethereum based on threshold signatures.
+They have been working hard
+on this for about 2 years now, and still haven't delivered a production-ready
+solution (which is completely expectable, given the nature of the problem).
+But back then, we knew we wouldn't find any solution soon, so we needed an
+alternative approach for Legacy's v1. Once again, we were obliged to trade-off decentralization.
+
+These three issues showed us that it was impossible to build Legacy as a decentralized service in the short/mid term. Instead, the architecture of
+Legacy's v1 relied
+considerably on centralized systems, which is not a bad thing *per se* but yet,
+it somewhat moved us away from the ideals that got us into the Ethereum
+ecosystem in the first place. The design was also much more complex than we
+expected at the beginning, resulting in a more demanding financial projection.
+
+On top of this, there was a number of legal constraints that needed to be
+considered in our business model, and that depend on each specific legal
+jurisdiction. Though I'm not covering these because they escape my domain of
+expertise, it's worth mentioning that legal constraints have also an impact on
+terms of decentralization.
+
+## The Seed Crowdsale with Cofoundit
+The ICO market was changing fast and many big actors, investors and hedge funds
+were entering the space. As a consequence, getting visibility was starting to
+be much more difficult and expensive.
+That guy who was quietly retweeting cryptocurrency news a few months back would
+now ask for 1 BTC only for a few retweets of your project. Big
+projects were "employing" hundreds of people asking them to talk about their
+"cutting edge tech" on forums and social networks, to write articles and to do
+all kinds of digital
+marketing---all in exchange for future tokens and promises of high returns.
+We soon realized that a successful
+ICO would require a significant marketing budget.
+Thus, our idea was to follow a progressive process, perhaps more in line
+with traditional start-up development, and launch a seed ICO that would allow us
+to further develop our product and run a decent marketing campaign
+*before* asking for a 6-figure number in funding.
+We were already discussing this strategy with a few investors who approached us
+(to our glad surprise, they all seemed interested in putting a ticket in our pre-ICO round), when we were contacted by Cofoundit to participate in their
+soon-to-be-launched [Seed program][cofoundit-seed]. Cofoundit---today a defunct
+venture---was a Slovenian company and a relevant actor in the blockchain space
+at the time. Their vision was to create a new VC ecosystem following some of the ideals of the early blockchain community (ie. building a more democratic and transparent financial system).
+Working with them made a lot of sense to us, as going through their platform
+would help us gain more exposure in the space, but also because they provided
+training and assistance to accelerate the project. However, their business model
+as well as their crowdfunding mechanism was somewhat complicated, and we feared this would impact the participation rate. In particular, people who wanted to
+participate in the crowdsale would first need to buy some CFI tokens to be
+whitelisted in the platform.
+Despite this, Cofoundit already had a track record of successful funding
+campaigns and their main added value was---at last in principle---their ability
+to put us in direct contact with a network of investors, so we agreed on
+applying to their program. A few days later
+we were officially [selected][seed-projects] as a Seed candidate project.
+
+What followed was probably one of the most intense months of my life. We focused
+much of our time and energy on marketing and community building, and the people
+from Cofoundit were actually very good at guiding us on that. I was no longer
+Legacy's chief scientist, I was more like a community manager, spending most of
+my time interacting with people in Telegram and reddit, and writing articles on
+Medium.
+
+From the eight projects that entered the program, six [made it][playoffs-projects] to the next phase, including us (actually, as the article says,  we were the project that caught most interest from Cofoundit's *Priority Pass*
+members---which was sort of a premium class of investors in Cofoundit's network)
+. The following phase were *The Playoffs*, a live
+event streamed on national TV in Slovenia, in which investors would be able to
+meet the team members and get a closer view of what we were building.
+Those were very agitated days. I was preparing for my PhD dissertation and right
+after that I would take a flight to Mexico to attend DevCon III. Finally,
+after a stroke of bad luck (I lost two flights due to a false bomb alarm in the
+airport, lost one long-distance train and almost lost another flight back from Mexico), I joined the rest of the team in the charming Ljubljana, and soon
+after Felipe found himself pitching Legacy on a television program. Crazy.
+
+![Cofoundit's Playoffs](/assets/playoffs.jpg)
+
+Long story short, even if we, as well as the Cofoundit team, put a lot of effort
+on all of this, the fundraising was a failure. Most of the teams didn't make it
+to their minimum target. Nobody did actually understand what happened really.
+. We heard and discussed a number of theories: That we were on a local bearish market, that ICOs were starting to be dominated by big players, that the ICO
+market was already dead, that we shouldn't have asked for KYC registration (we were the only team that did), etc.
+At the beginning we were a bit angry with Cofoundit because we thought they
+should knew that the numbers (ie. our community traction metrics) weren't right, and, if that was not the case, they weren't 100% transparent about it. Either
+way, they had no interest in carrying on with the fundraising process if the
+numbers wouldn't made a minimum of sense.
+
+What I think is that it was just too difficult to know beforehand. We made a lot of strategical mistakes, for sure, but at the same time the crypto space was
+full of uncertainties and was changing at an unbelievable pace. Should we
+took that ETH we raised, only a month later we would have more than surpassed
+our funding target. Who could have possibly expected that? For me, a guy who was just finishing its PhD in a very calm and quite
+office, all this experience was simply amazing, and a storm of lessons that I'd
+never had had in the comfort of the academic world.
+
+In a way, not doing the token crowdsale was a relief. The whole thing was
+surounded by a number of legal uncertainties and having a significant fraction
+of the token holders being mostly interested in high and quick returns was
+already becoming a burden for several projects in the space. About a year later, Latvia-based startup Digipulse (who was direct concurrence for Legacy) was
+obliged to suppress its token because it was considered as an unregistered security by crypto exchanges who trade it and also because
+it was simply not being used. While we did all in our hands to make sure
+our crowdsale was legally compliant (sidenote: our legal expenses accounted for
++60% of all our expenses) and to design a business model that would prevent our token from being considered a security, there is always some extent of
+uncertainty when your are doing something completely new, specially in the
+financial market. There was still a non-zero probability that what happened to Digipulse could have happened to us.
+
+## Legacy Today
+
+The failure of our fundraising marked the end of what we call Legacy v1.0. Last
+year, we completely redesigned our solution and developed a new [MVP][mvp] from
+scratch. This time, our focus is on *building* something useful and completely
+decentralized. No token. No blah blah. Just code.
+
+
+[app-tokens]: https://medium.com/newtown-partners/application-protocols-are-the-better-investment-heres-why-7a2efdde594e
+[protocol-tokens]: http://www.usv.com/blog/fat-protocols
+[keep]: https://keep.network/
+[cofoundit-seed]: https://blog.cofound.it/cofound-it-seed-validating-early-stage-blockchain-startups-through-community-engagement-857c2fe2e4ad
+[seed-projects]: https://blog.cofound.it/cofound-it-seed-first-five-candidates-announced-7fc387b7849c
+[playoffs-projects]: https://blog.cofound.it/cofound-it-playoffs-teams-participating-in-live-crowdsales-announced-d252adac1a15
+[mvp]: https://github.com/legacynetwork/MVP
