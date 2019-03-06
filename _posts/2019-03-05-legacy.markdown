@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Legacy: My Experience in a Blockchain Startup Project"
-date:   2019-02-18 12:48:02 +0100
+title: "My Experience in a Blockchain Startup Project: Legacy"
+date: 2019-03-05
 categories: blockchain
 ---
 ![Legacy](/assets/logo.png)
@@ -9,7 +9,7 @@ categories: blockchain
 
 In early 2017, while I was writing my PhD thesis, my friend Felipe asked me to
 join him and help him build Legacy, a dApp initially aiming at solving the
-problem of transferring cryptocurrency funds after passing. My main task would be to help designing the overall architecture, to dig into any technical issues related to the Ethereum platform and to write the whitepaper.
+problem of transferring cryptocurrency funds after passing. My main task would be to help designing the overall architecture, to dig into any technical issues related to the Ethereum platform and to write the [whitepaper][whitepaper].
 This was about a year before the great crypto rally that pushed ETH over 1000€,
 and at the time the crypto community was rather small.
 As a consequence, we soon realized that if we wanted to build a business around
@@ -47,7 +47,8 @@ may think of this as some sort of oracle service),
 which was something essential for our original product as well as for some
 use-cases in decentralized insurtech.
 Option B was to remain at the application layer and adopt a token model that
-would allow us to converge towards a decentralized autonomous organization (DAO).
+would allow us to converge towards a *decentralized autonomous organization*
+(DAO).
 At this point, there is already something that is worth noting: The design of
 our product was influenced by the design of our token model, when it should be
 the other way around. Ideally, a token should add value to your product or
@@ -179,13 +180,13 @@ soon-to-be-launched [Seed program][cofoundit-seed]. Cofoundit---today a defunct
 venture---was a Slovenian company and a relevant actor in the blockchain space
 at the time. Their vision was to create a new VC ecosystem following some of the ideals of the early blockchain community (ie. building a more democratic and transparent financial system).
 Working with them made a lot of sense to us, as going through their platform
-would help us gain more exposure in the space, but also because they provided
-training and assistance to accelerate the project. However, their business model
-as well as their crowdfunding mechanism was somewhat complicated, and we feared this would impact the participation rate. In particular, people who wanted to
-participate in the crowdsale would first need to buy some CFI tokens to be
-whitelisted in the platform.
+would help us gain more exposure in the space, but also because they would
+provide training and assistance to accelerate the project. However, their
+business model as well as their crowdfunding mechanism was somewhat complicated, and we feared this would impact the participation rate. In particular, people
+who wanted to participate in the crowdsale would first need to buy some CFI
+tokens to be whitelisted in the platform.
 Despite this, Cofoundit already had a track record of successful funding
-campaigns and their main added value was---at last in principle---their ability
+campaigns and their main added value was---at least in principle---their ability
 to put us in direct contact with a network of investors, so we agreed on
 applying to their program. A few days later
 we were officially [selected][seed-projects] as a Seed candidate project.
@@ -198,8 +199,8 @@ my time interacting with people in Telegram and reddit, and writing articles on
 Medium.
 
 From the eight projects that entered the program, six [made it][playoffs-projects] to the next phase, including us (actually, as the article says,  we were the project that caught most interest from Cofoundit's *Priority Pass*
-members---which was sort of a premium class of investors in Cofoundit's network)
-. The following phase were *The Playoffs*, a live
+members---which was sort of a premium class of investors in Cofoundit's
+network). The following phase were *The Playoffs*, a live
 event streamed on national TV in Slovenia, in which investors would be able to
 meet the team members and get a closer view of what we were building.
 Those were very agitated days. I was preparing for my PhD dissertation and right
@@ -213,7 +214,7 @@ after Felipe found himself pitching Legacy on a television program. Crazy.
 Long story short, even if we, as well as the Cofoundit team, put a lot of effort
 on all of this, the fundraising was a failure. Most of the teams didn't make it
 to their minimum target. Nobody did actually understand what happened really.
-. We heard and discussed a number of theories: That we were on a local bearish market, that ICOs were starting to be dominated by big players, that the ICO
+We heard and discussed a number of theories: That we were on a local bearish market, that ICOs were starting to be dominated by big players, that the ICO
 market was already dead, that we shouldn't have asked for KYC registration (we were the only team that did), etc.
 At the beginning we were a bit angry with Cofoundit because we thought they
 should knew that the numbers (ie. our community traction metrics) weren't right, and, if that was not the case, they weren't 100% transparent about it. Either
@@ -223,29 +224,29 @@ numbers wouldn't made a minimum of sense.
 What I think is that it was just too difficult to know beforehand. We made a lot of strategical mistakes, for sure, but at the same time the crypto space was
 full of uncertainties and was changing at an unbelievable pace. Should we
 took that ETH we raised, only a month later we would have more than surpassed
-our funding target. Who could have possibly expected that? For me, a guy who was just finishing its PhD in a very calm and quite
-office, all this experience was simply amazing, and a storm of lessons that I'd
-never had had in the comfort of the academic world.
+our funding target. Who could have possibly expected that? For me, a guy who was just finishing his PhD in a very calm and quite
+office, all this experience was simply amazing, a storm of lessons that I'd
+never have had in the comfort of the academic world.
 
 In a way, not doing the token crowdsale was a relief. The whole thing was
-surounded by a number of legal uncertainties and having a significant fraction
+surrounded by a number of legal uncertainties and having a significant fraction
 of the token holders being mostly interested in high and quick returns was
 already becoming a burden for several projects in the space. About a year later, Latvia-based startup Digipulse (who was direct concurrence for Legacy) was
-obliged to suppress its token because it was considered as an unregistered security by crypto exchanges who trade it and also because
+obliged to suppress its token because it was considered as an unregistered security by crypto exchanges who were trading it and also because
 it was simply not being used. While we did all in our hands to make sure
 our crowdsale was legally compliant (sidenote: our legal expenses accounted for
-+60% of all our expenses) and to design a business model that would prevent our token from being considered a security, there is always some extent of
++60% of all our expenses) and to design a business model that would prevent our token from being considered as a security, there is always some extent of
 uncertainty when your are doing something completely new, specially in the
 financial market. There was still a non-zero probability that what happened to Digipulse could have happened to us.
 
 ## Legacy Today
 
-The failure of our fundraising marked the end of what we call Legacy v1.0. Last
-year, we completely redesigned our solution and developed a new [MVP][mvp] from
-scratch. This time, our focus is on *building* something useful and completely
+The failure of our fundraising campaign marked the end of what we call Legacy v1.0. Last year, we completely redesigned our solution and came up with
+something much more compact and elegant. Based on that, we developed a new [MVP][mvp] from scratch.
+This time, our focus is on *building* something useful and completely
 decentralized. No token. No blah blah. Just code.
 
-
+[whitepaper]: https://github.com/legacynetwork/whitepaper/raw/master/main.pdf
 [app-tokens]: https://medium.com/newtown-partners/application-protocols-are-the-better-investment-heres-why-7a2efdde594e
 [protocol-tokens]: http://www.usv.com/blog/fat-protocols
 [keep]: https://keep.network/
