@@ -4,6 +4,7 @@ _site
 .jekyll-metadata
 .jekyll-metadata
 Gemfile.lock
+vendor/
 
 ### Gulp ###
 package.json
