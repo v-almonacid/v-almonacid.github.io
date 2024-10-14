@@ -16,15 +16,15 @@
 title: Vicente Almonacid
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  I’m an engineer with scientific background (PhD) and experience in blockchain,
+  I’m an software engineer with scientific background (PhD) and experience in blockchain,
   space communications systems and entrepreneurship.
-  Interested in blockchain technology  as
+  Interested in blockchain technology as
   a means for building more decentralised economic and social structures.
   Out of the matrix I'm an amateur mountaineer and musician.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: v_almonacid
-github_username:  v-almonacid
+github_username: v-almonacid
 linkedin_username: vicente-almonacid
 
 # Build settings
@@ -32,7 +32,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
