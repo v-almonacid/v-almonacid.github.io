@@ -21,7 +21,7 @@ I'm constantly learning new things. I'm now particularly interested in AI/LLMs/L
 
 - Crypto wallets: For over 2 years, I was the lead developer of [Yoroi Mobile](https://yoroi-wallet.com/), the most popular Cardano Wallet.
 - Building and maintaining apps in production: I led a frontend team to build [app.alphaday.com](https//app.alphaday.com) (customizable crypto dashboards & portfolio) and [Pulse](http://getpulse.xyz) (user-friendly mobile crypto news aggregator)—both from scratch.
-- Open source crypto infrastructure: I wrote React Native bindings for Cardano's Rust library. It allows any developer to create mobile apps that can interact with the Cardano blockchain.
+- Open source crypto infrastructure: I wrote [React Native bindings](https://github.com/Emurgo/csl-mobile-bridge) for Cardano's Rust library. It allows any developer to create mobile apps that can interact with the Cardano blockchain.
 
 ### Startup Experience
 
