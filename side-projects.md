@@ -17,7 +17,7 @@ share something that might be even remotely useful for somebody.
 This app lets you transform a BIP39 seed phrase into a scrambled version—a series of words mixed with random characters that don't resemble a typical seed phrase.
 **You do not need to enter your seed phrase to use this app**. Simply input a password, which will be used to encode each word of the BIP39 English set.
 Then scroll around the UI to find each word of your seed phrase and write down the scrambled version. Finally, store it using the same recommended practices for storing standard seed phrases.
-Just remember to back up your password safely elsewhere.
+Just remember to save your password safely elsewhere.
 To restore your seed phrase back in plain text, just follow the inverse process.
 
 ## Dumbmarketcap
@@ -27,7 +27,7 @@ To restore your seed phrase back in plain text, just follow the inverse process.
 
 ![alt text](../assets/dmc.png)
 
-Dumbmarketcap is a cryptocurrency price tracking site (much like coinmarketcap) where the prices are adjusted using the supply of a reference coin.
+Dumbmarketcap is a cryptocurrency price tracking site (much like coinmarketcap) where the prices are adjusted using the supply of a reference coin of your choice.
 The idea is to show that coins that some people might consider "cheap" would actually be quite expensive if they had a smaller supply. For instance,
 if WIF (dogwifhat) had the same supply than bitcoin, its adjusted price would be:
 
