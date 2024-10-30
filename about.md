@@ -31,6 +31,7 @@ Some features and projects I completed during my time at Emurgo:
 - Handling hard-forks and protocol upgrades: Support for new address structures, transaction types, native assets, etc.
 - Support for Cardano DAO voting (Catalyst) project.
 - Payment URIs: I co-authored a Cardano Improvement Proposal to establish `web+cardano://` as a URI protocol to handle payments using QRs, which we then integrated in Yoroi.
+- Spent a few weeks in India teaching about blockchain fundamentals to undergrad students as part of Emurgo Academy's program.
 
 ### 2017 - 2018
 
@@ -69,3 +70,6 @@ I did a 6-month internship as my master's final project with Airbus Defence and 
 I love mountains and being in Nature. I enjoy rock climbing and alpinism.
 
 I also used to play the electric guitar in [Cold Blossom](https://soundcloud.com/coldblossom/), an alternative-rock band based in Toulouse, France.
+
+![Climbing La Picada](../assets/la-picada.jpg)
+_Climbing Cerro La Picada in Southern Chile_

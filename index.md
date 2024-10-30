@@ -9,7 +9,7 @@ layout: home
 
 # Hi!
 
-I’m Vicente, a software engineer who has been mostly working as a frontend developer on blockchain/web3 for the last 7 years.
+I’m Vicente, a software engineer with seven years of experience primarily focused on blockchain and Web3 technologies.
 
 My main stack is: `React`, `React Native` and `Typescript`.
 
@@ -21,11 +21,11 @@ I'm constantly learning new things. I'm now particularly interested in AI/LLMs/L
 
 - Crypto wallets: For over 2 years, I was the lead developer of [Yoroi Mobile](https://yoroi-wallet.com/), the most popular mobile Cardano Wallet.
 - Building and maintaining apps in production: I led a frontend team to build [app.alphaday.com](https//app.alphaday.com) (customizable crypto dashboards & portfolio) and [Pulse](http://getpulse.xyz) (user-friendly mobile crypto news aggregator)—both from scratch.
-- Open source crypto infrastructure: I wrote [React Native bindings](https://github.com/Emurgo/csl-mobile-bridge) for Cardano's Rust library. It allows any developer to create mobile apps that can interact with the Cardano blockchain.
+- Open source crypto infrastructure: I wrote a React Native [Cardano SDK](https://github.com/Emurgo/csl-mobile-bridge). It enables developers to create mobile apps that interact with the Cardano blockchain.
 
 ### Startup Experience
 
-- In 2017, I co-founded Legacy, a death man' switch to manage your crypto-assets when you die.
+- In 2017, I co-founded Legacy, a death man' switch to manage your crypto-assets when you die. Legacy was a [finalist](https://medium.com/legacy-network/we-made-it-4677673ee6bf) in Cofound.it's acceleration program. You can check Legacy's whitepaper, which I co-authored, [here](https://github.com/legacynetwork/whitepaper/blob/master/main.pdf).
 - Around the same time, I co-founded ChainImpact, a consultancy firm focused on blockchain.
 
 ### Research Experience
